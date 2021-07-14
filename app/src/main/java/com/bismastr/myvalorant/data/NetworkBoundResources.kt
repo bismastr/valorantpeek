@@ -1,6 +1,6 @@
 package com.bismastr.myvalorant.data
 
-import com.bismastr.myvalorant.data.remote.ApiResponse
+import com.bismastr.myvalorant.data.remote.api.ApiResponse
 import kotlinx.coroutines.flow.*
 
 abstract class NetworkBoundResource<ResultType, RequestType> {

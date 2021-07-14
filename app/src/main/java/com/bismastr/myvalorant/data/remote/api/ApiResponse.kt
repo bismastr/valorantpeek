@@ -1,4 +1,4 @@
-package com.bismastr.myvalorant.data.remote
+package com.bismastr.myvalorant.data.remote.api
 
 sealed class ApiResponse<out R> {
     data class Success<out T>(val data: T) : ApiResponse<T>()
