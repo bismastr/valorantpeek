@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/biru_dongker_valo"
+    tools:context=".SplashActivity">
+
+    <ImageView
+        android:id="@+id/iv_logo"
+        android:layout_width="108dp"
+        android:layout_height="108dp"
+        android:layout_centerInParent="true"
+        android:scaleType="centerInside"
+        android:src="@drawable/val_logo_square" />
+
+    <LinearLayout
+        android:id="@+id/ll_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="48dp"
+        android:orientation="horizontal">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:layout_width="136dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:text="Sign In"
+            android:textColor="@color/white"
+            android:textAllCaps="false"
+            android:background="@drawable/button_merah_selector"
+            android:enabled="true"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:layout_width="136dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:text="Sign Up"
+            android:textColor="@color/merah_valo"
+            android:textAllCaps="false"
+            android:background="@drawable/button_border_white_selector"/>
+    </LinearLayout>
+</RelativeLayout>
