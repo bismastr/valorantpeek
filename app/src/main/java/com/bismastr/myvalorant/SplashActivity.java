@@ -8,6 +8,7 @@ import android.os.Handler;
 import android.transition.Fade;
 import android.transition.Transition;
 import android.transition.TransitionManager;
+import android.util.Log;
 import android.view.View;
 
 import com.bismastr.myvalorant.databinding.ActivitySplashBinding;
@@ -30,6 +31,8 @@ public class SplashActivity extends AppCompatActivity {
                 transition.setDuration(600);
                 transition.addTarget(binding.llButton);
                 TransitionManager.beginDelayedTransition(binding.getRoot(), transition);
+
+                Log.d("wow", "mantab");
 
             }
         }, 3000);
