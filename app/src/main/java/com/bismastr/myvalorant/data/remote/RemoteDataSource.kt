@@ -3,7 +3,7 @@ package com.bismastr.myvalorant.data.remote
 import com.bismastr.myvalorant.data.remote.api.ApiResponse
 import com.bismastr.myvalorant.data.remote.api.ApiValHendrik
 import com.bismastr.myvalorant.data.remote.response.CurrentData
-import com.bismastr.myvalorant.data.remote.response.DataItem
+import com.bismastr.myvalorant.data.remote.response.NewsItem
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
@@ -14,11 +14,11 @@ class RemoteDataSource(private val apiValHendrik: ApiValHendrik) {
     suspend fun getAllNews(
         countryCode: String,
         filter: String
-    ): Flow<ApiResponse<ArrayList<DataItem>>> {
+    ): Flow<ApiResponse<ArrayList<NewsItem>>> {
         return flow {
             try {
                 val response = apiValHendrik.getAllNews(countryCode, filter)
-                val responseArray = response.data as ArrayList<DataItem>
+                val responseArray = response.data as ArrayList<NewsItem>
                 if (responseArray.isNotEmpty()) {
                     this.emit(ApiResponse.Success(response.data))
                 } else {

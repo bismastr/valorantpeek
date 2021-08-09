@@ -12,7 +12,7 @@ interface ApiValHendrik {
     }
 
     //news
-    @GET("/valorant/v1/website/{country-code}")
+    @GET("valorant/v1/website/{country-code}")
     suspend fun getAllNews(
         @Path("country-code") countryCode: String,
         @Query("filter") filter: String, //Filter Available: game_updates, dev, esports, announcments

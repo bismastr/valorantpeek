@@ -2,6 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.bismastr.myvalorant">
 
+    <uses-permission android:name="android.permission.INTERNET" />
     <application
         android:name=".MyApplication"
         android:allowBackup="true"
@@ -13,7 +14,7 @@
         <activity android:name=".LoginActivity"></activity>
         <activity android:name=".RegisterActivity" />
         <activity android:name=".SplashActivity" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".ui.main.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

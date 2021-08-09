@@ -1,15 +1,13 @@
 package com.bismastr.myvalorant;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.transition.Fade;
 import android.transition.Transition;
 import android.transition.TransitionManager;
 import android.util.Log;
-import android.view.View;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.bismastr.myvalorant.databinding.ActivitySplashBinding;
 
@@ -23,6 +21,11 @@ public class SplashActivity extends AppCompatActivity {
         binding = ActivitySplashBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
+        delay();
+
+    }
+
+    private void delay(){
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
@@ -37,4 +40,8 @@ public class SplashActivity extends AppCompatActivity {
             }
         }, 3000);
     }
+
+
+
+
 }
