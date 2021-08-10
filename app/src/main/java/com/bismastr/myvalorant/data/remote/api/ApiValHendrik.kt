@@ -1,6 +1,8 @@
 package com.bismastr.myvalorant.data.remote.api
 
 import com.bismastr.myvalorant.data.remote.response.AllNewsResponse
+import com.bismastr.myvalorant.data.remote.response.LeaderboardResponse
+import com.bismastr.myvalorant.data.remote.response.LeaderboardResponseItem
 import com.bismastr.myvalorant.data.remote.response.UserMmrResponse
 import retrofit2.http.GET
 import retrofit2.http.Path
@@ -17,7 +19,13 @@ interface ApiValHendrik {
         @Path("country-code") countryCode: String,
         @Query("filter") filter: String, //Filter Available: game_updates, dev, esports, announcments
     ): AllNewsResponse
+    //leaderboard
+    @GET("valorant/v1/leaderboard/{country-code}")
+    suspend fun getLeaderBoard(
+        @Path("country-code") countryCode: String
+    ): List<LeaderboardResponseItem>
 
+    //user mmr
     @GET("/valorant/v2/mmr/ap/{username}/{tag}")
     suspend fun getUserMmr(
         @Path("username") username: String,

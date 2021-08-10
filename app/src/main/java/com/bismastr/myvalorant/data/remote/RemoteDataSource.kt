@@ -3,6 +3,7 @@ package com.bismastr.myvalorant.data.remote
 import com.bismastr.myvalorant.data.remote.api.ApiResponse
 import com.bismastr.myvalorant.data.remote.api.ApiValHendrik
 import com.bismastr.myvalorant.data.remote.response.CurrentData
+import com.bismastr.myvalorant.data.remote.response.LeaderboardResponseItem
 import com.bismastr.myvalorant.data.remote.response.NewsItem
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
@@ -25,6 +26,23 @@ class RemoteDataSource(private val apiValHendrik: ApiValHendrik) {
                     this.emit(ApiResponse.Empty)
                 }
 
+            } catch (e: Exception) {
+                this.emit(ApiResponse.Error(e.toString()))
+            }
+        }.flowOn(Dispatchers.IO)
+    }
+
+    suspend fun getLeaderboard(
+        countryCode: String
+    ): Flow<ApiResponse<List<LeaderboardResponseItem>>>{
+        return flow {
+            try {
+                val response = apiValHendrik.getLeaderBoard(countryCode)
+                if (response.isNotEmpty()) {
+                    this.emit(ApiResponse.Success(response))
+                } else {
+                    this.emit(ApiResponse.Empty)
+                }
             } catch (e: Exception) {
                 this.emit(ApiResponse.Error(e.toString()))
             }

@@ -6,4 +6,5 @@ import com.bismastr.myvalorant.data.Repository
 
 class MainViewModel(repository: Repository): ViewModel() {
     val getAllNews = repository.getAllNews().asLiveData()
+    val getLeaderboard = repository.getLeaderboard().asLiveData()
 }
