@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.news.NewsFragment">
+
+    <TextView
+        android:id="@+id/tv_latest_news"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Latest News" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_latest_news"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_latest_news"
+        tools:listitem="@layout/item_news" />
+
+    <TextView
+        android:id="@+id/tv_category"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Category"
+        android:layout_below="@id/rv_latest_news"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_category"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_category"
+        android:orientation="vertical"/>
+
+</RelativeLayout>
