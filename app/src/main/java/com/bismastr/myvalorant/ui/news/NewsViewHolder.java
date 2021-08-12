@@ -11,9 +11,6 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.bismastr.myvalorant.R;
 import com.bismastr.myvalorant.data.local.entity.NewsEntity;
 import com.bumptech.glide.Glide;
-import com.bumptech.glide.request.RequestOptions;
-
-import java.util.ArrayList;
 
 public class NewsViewHolder extends RecyclerView.ViewHolder {
 
