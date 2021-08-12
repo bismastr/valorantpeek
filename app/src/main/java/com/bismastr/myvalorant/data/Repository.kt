@@ -13,8 +13,9 @@ import com.bismastr.myvalorant.utils.DataMapper
 import kotlinx.coroutines.flow.Flow
 
 class Repository constructor(
+    private val localDataSource: LocalDataSource,
     private val remoteDataSource: RemoteDataSource,
-    private val localDataSource: LocalDataSource
+
 ): IRepository {
     override fun getAllNews(): Flow<Resource<List<NewsEntity>>> =
         object : NetworkBoundResource<List<NewsEntity>, List<NewsItem>>(){
