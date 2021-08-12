@@ -8,6 +8,7 @@ import com.bismastr.myvalorant.data.remote.RemoteDataSource
 import com.bismastr.myvalorant.data.remote.api.ApiValHendrik
 import com.bismastr.myvalorant.domain.IRepository
 import com.bismastr.myvalorant.ui.main.MainViewModel
+import com.bismastr.myvalorant.ui.news.NewsViewModel
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import org.koin.android.ext.koin.androidContext
@@ -45,7 +46,6 @@ val networkModule = module {
 }
 
 
-
 val databaseModule = module {
     factory { get<ValorantDatabase>().Dao() }
     single {
@@ -65,4 +65,6 @@ val repositoryModule = module {
 val viewModelModule = module {
     factory { Repository(get(), get()) }
     viewModel { MainViewModel(get()) }
+    viewModel { NewsViewModel(get()) }
 }
+
