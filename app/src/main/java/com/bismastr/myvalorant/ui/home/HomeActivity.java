@@ -5,6 +5,7 @@ import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.bismastr.myvalorant.R;
+import com.bismastr.myvalorant.ui.leaderboard.LeaderboardFragment;
 import com.bismastr.myvalorant.ui.news.NewsFragment;
 
 public class HomeActivity extends AppCompatActivity {
@@ -17,7 +18,7 @@ public class HomeActivity extends AppCompatActivity {
             getSupportFragmentManager()
                     .beginTransaction()
                     .setReorderingAllowed(true)
-                    .add(R.id.fragment_container_view_tag, NewsFragment.class, null)
+                    .add(R.id.fragment_container_view_tag, LeaderboardFragment.class, null)
                     .commit();
         }
 

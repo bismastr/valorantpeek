@@ -15,7 +15,6 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import com.bismastr.myvalorant.data.local.entity.NewsEntity;
 import com.bismastr.myvalorant.databinding.FragmentNewsBinding;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import kotlin.Lazy;
@@ -23,7 +22,6 @@ import kotlin.Lazy;
 
 public class NewsFragment extends Fragment {
     private FragmentNewsBinding binding;
-    List<NewsEntity> newsArraylist = new ArrayList<>();
     // lazy ViewModel
     private final Lazy<NewsViewModel> viewModel = sharedViewModel(this, NewsViewModel.class);
 
@@ -38,7 +36,6 @@ public class NewsFragment extends Fragment {
         return view;
     }
 
-
     @Override
     public void onDestroyView() {
         super.onDestroyView();
@@ -48,20 +45,19 @@ public class NewsFragment extends Fragment {
     private void getNews() {
         viewModel.getValue().getGetAllNews().observe(requireActivity(), NewsList -> {
             Log.d("GETNEWS", "INIT");
+
             if (NewsList.getData() != null) {
-                newsArraylist = NewsList.getData();
-                Log.d("GETNEWS", NewsList.getData().toString());
                 showRecyclerList(NewsList.getData());
+                Log.d("GETNEWS", NewsList.getData().toString());
+
             } else {
                 Log.d("GETNEWS", "Null");
-
             }
 
         });
     }
 
     private void showRecyclerList(List<NewsEntity> data) {
-        //private NewsViewModel newsViewModel;
         NewsAdapter newsAdapter = new NewsAdapter(data);
         binding.rvLatestNews.setLayoutManager(new LinearLayoutManager(this.getContext()));
         binding.rvLatestNews.setAdapter(newsAdapter);

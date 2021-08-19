@@ -7,6 +7,7 @@ import com.bismastr.myvalorant.data.local.ValorantDatabase
 import com.bismastr.myvalorant.data.remote.RemoteDataSource
 import com.bismastr.myvalorant.data.remote.api.ApiValHendrik
 import com.bismastr.myvalorant.domain.IRepository
+import com.bismastr.myvalorant.ui.leaderboard.LeaderboardViewModel
 import com.bismastr.myvalorant.ui.main.MainViewModel
 import com.bismastr.myvalorant.ui.news.NewsViewModel
 import okhttp3.OkHttpClient
@@ -66,5 +67,6 @@ val viewModelModule = module {
     factory { Repository(get(), get()) }
     viewModel { MainViewModel(get()) }
     viewModel { NewsViewModel(get()) }
+    viewModel {LeaderboardViewModel(get())}
 }
 
