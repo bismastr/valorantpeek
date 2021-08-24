@@ -1,9 +1,7 @@
 package com.bismastr.myvalorant.data.local
 
+import androidx.room.*
 import androidx.room.Dao
-import androidx.room.Insert
-import androidx.room.OnConflictStrategy
-import androidx.room.Query
 import com.bismastr.myvalorant.data.local.entity.LeaderboardEntity
 import com.bismastr.myvalorant.data.local.entity.NewsEntity
 import kotlinx.coroutines.flow.Flow
@@ -23,4 +21,7 @@ interface Dao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertLeaderboard(leaderBoard: List<LeaderboardEntity>)
+
+    @Update(entity = LeaderboardEntity::class)
+    suspend fun updateLeaderboard(leaderBoard: LeaderboardEntity)
 }

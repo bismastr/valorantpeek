@@ -9,13 +9,21 @@
         android:id="@+id/tv_tittle_leaderboard"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Leaderboard" />
+        android:layout_marginHorizontal="32dp"
+        android:text="Leaderboard"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        android:textStyle="bold" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_leaderboard"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/tv_tittle_leaderboard"
+        android:layout_marginHorizontal="32dp"
+        android:layout_marginVertical="24dp"
+        android:background="@drawable/leaderboard_background"
+        tools:itemCount="10"
         tools:listitem="@layout/item_leaderboard" />
 
 

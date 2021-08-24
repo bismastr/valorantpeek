@@ -8,4 +8,5 @@ import kotlinx.coroutines.flow.Flow
 interface IRepository {
     fun getAllNews(): Flow<Resource<List<NewsEntity>>>
     fun getLeaderboard(): Flow<Resource<List<LeaderboardEntity>>>
+    fun updateLeaderboard(): Flow<Resource<LeaderboardEntity>>
 }
