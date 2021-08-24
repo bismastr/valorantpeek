@@ -25,7 +25,6 @@
         <activity android:name=".RegisterActivity" />
         <activity android:name=".SplashActivity" />
         <activity android:name=".ui.main.MainActivity">
-
         </activity>
     </application>
 

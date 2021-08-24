@@ -28,5 +28,7 @@ data class LeaderboardEntity(
     @ColumnInfo(name = "puuid")
     val puuid: String,
     @ColumnInfo(name = "tittleID")
-    val titleID: String
+    val titleID: String,
+
+    val expandable: Boolean = false
 )

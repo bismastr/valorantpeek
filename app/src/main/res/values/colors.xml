@@ -11,4 +11,6 @@
     <color name="merah_valo">#DC3D4B</color>
     <color name="merah_mbulak_valo">#DF7D85</color>
     <color name="abu_valo">#3A4454</color>
+    <color name="dark_gray">#a7a7a7</color>
+    <color name="white_50">#50FFFFFF</color>
 </resources>

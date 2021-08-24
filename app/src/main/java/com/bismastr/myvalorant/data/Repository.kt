@@ -16,9 +16,9 @@ class Repository constructor(
     private val localDataSource: LocalDataSource,
     private val remoteDataSource: RemoteDataSource,
 
-): IRepository {
+    ) : IRepository {
     override fun getAllNews(): Flow<Resource<List<NewsEntity>>> =
-        object : NetworkBoundResource<List<NewsEntity>, List<NewsItem>>(){
+        object : NetworkBoundResource<List<NewsEntity>, List<NewsItem>>() {
             override fun loadFromDB(): Flow<List<NewsEntity>> {
                 return localDataSource.getAllNews()
             }

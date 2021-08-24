@@ -13,18 +13,17 @@ import com.bismastr.myvalorant.data.local.entity.NewsEntity;
 
 import java.util.List;
 
-
-public class NewsAdapter extends RecyclerView.Adapter<NewsViewHolder> {
+public class NewsAdapterCategory extends RecyclerView.Adapter<NewsViewHolder> {
     private final List<NewsEntity> localDataSet;
 
-    public NewsAdapter(List<NewsEntity> dataSet) {
+    public NewsAdapterCategory(List<NewsEntity> dataSet) {
         localDataSet = dataSet;
     }
 
     @NonNull
     @Override
     public NewsViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_news, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_news_category, parent, false);
         return new NewsViewHolder(view);
     }
 
@@ -36,6 +35,6 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsViewHolder> {
 
     @Override
     public int getItemCount() {
-        return 4;
+        return localDataSet.size();
     }
 }

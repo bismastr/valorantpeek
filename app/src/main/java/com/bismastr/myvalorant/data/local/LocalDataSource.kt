@@ -11,5 +11,8 @@ class LocalDataSource(private val dao: Dao) {
 
     fun getLeaderboard(): Flow<List<LeaderboardEntity>> = dao.getLeaderboard()
 
-    suspend fun insertLeaderboard(leaderboardList: List<LeaderboardEntity>) = dao.insertLeaderboard(leaderboardList)
+    suspend fun insertLeaderboard(leaderboardList: List<LeaderboardEntity>) =
+        dao.insertLeaderboard(leaderboardList)
+
+    suspend fun updateLeaderboard(leaderBoard: LeaderboardEntity) = dao.updateLeaderboard(leaderBoard)
 }
